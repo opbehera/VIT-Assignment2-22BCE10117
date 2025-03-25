@@ -6,6 +6,8 @@
 </head>
 <body>
   <h1>Alphabetical Order Output:</h1>
+  <input type="text" id="inputString" placeholder="Enter a string">
+  <button onclick="sortInput()">Sort</button>
   <p id="result"></p>
 
   <script>
@@ -13,8 +15,10 @@
       return str.split('').sort().join('');
     }
 
-    const input = 'webmaster';
-    document.getElementById('result').textContent = sortString(input);
+    function sortInput() {
+      const input = document.getElementById('inputString').value;
+      document.getElementById('result').textContent = input ? sortString(input) : "Please enter a string.";
+    }
   </script>
 </body>
 </html>
