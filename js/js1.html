@@ -6,6 +6,8 @@
 </head>
 <body>
   <h1>Reverse Number Output:</h1>
+  <input type="number" id="inputNumber" placeholder="Enter a number">
+  <button onclick="reverseInput()">Reverse</button>
   <p id="result"></p>
 
   <script>
@@ -13,8 +15,10 @@
       return parseInt(num.toString().split('').reverse().join(''), 10);
     }
 
-    const x = 32243;
-    document.getElementById('result').textContent = reverseNumber(x);
+    function reverseInput() {
+      const input = document.getElementById('inputNumber').value;
+      document.getElementById('result').textContent = input ? reverseNumber(input) : "Please enter a number.";
+    }
   </script>
 </body>
 </html>
